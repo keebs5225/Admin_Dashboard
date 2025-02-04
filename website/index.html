@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">🏠 Home</a></li>
+                    <li><a href="#">📂 Projects</a></li>
+                    <li><a href="#">📢 Announcements</a></li>
+                    <li><a href="#">📊 Analytics</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <header class="header">
+            <input type="text" placeholder="Search...">
+            <div class="user-info">
+                <span>👤 Admin</span>
+                <button>⚙️ Settings</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="projects">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="card">Project 1</div>
+                    <div class="card">Project 2</div>
+                    <div class="card">Project 3</div>
+                </div>
+            </section>
+
+            <section class="announcements">
+                <h2>Announcements</h2>
+                <p>Important updates will appear here.</p>
+            </section>
+
+            <section class="trending">
+                <h2>Trending</h2>
+                <ul>
+                    <li>@user1 - New UI design</li>
+                    <li>@user2 - Completed a milestone</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
