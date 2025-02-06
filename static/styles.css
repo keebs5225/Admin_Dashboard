@@ -9,15 +9,13 @@ body, h1, h2, h3, p, ul {
 /* Layout */
 .container {
     display: grid;
-    grid-template-columns: 250px 1fr; /* Sidebar takes fixed 250px, rest is flexible */
-    grid-template-rows: auto 1fr; /* Header auto height, content fills remaining */
+    grid-template-columns: 250px 1fr; /* Sidebar fixed, right content fills */
     height: 100vh;
-    gap: 10px;
 }
 
-/* Sidebar */
+/* Sidebar (Dashboard) */
 .sidebar {
-    background-color: #222;
+    background-color: #1E3A8A; /* Deep blue */
     color: white;
     padding: 20px;
     display: flex;
@@ -34,6 +32,7 @@ body, h1, h2, h3, p, ul {
 
 .sidebar ul {
     list-style: none;
+    padding: 0;
 }
 
 .sidebar a {
@@ -46,12 +45,18 @@ body, h1, h2, h3, p, ul {
 }
 
 .sidebar a:hover {
-    background-color: #444;
+    background-color: #2563EB; /* Lighter blue */
+}
+
+/* Right Content */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 /* Header */
 .header {
-    grid-column: 2 / 3; /* Stretches across full right side */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +67,6 @@ body, h1, h2, h3, p, ul {
 
 /* Main Content (Grid Layout) */
 .main-content {
-    grid-column: 2 / 3;
     display: grid;
     grid-template-columns: 2fr 1fr; /* Main content gets more space */
     grid-template-rows: auto auto;
@@ -99,15 +103,6 @@ body, h1, h2, h3, p, ul {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.announcement-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.announcement-item:last-child {
-    border-bottom: none;
-}
-
 /* Trending */
 .trending {
     grid-column: 1 / 3; /* Full width under projects & announcements */
@@ -117,24 +112,10 @@ body, h1, h2, h3, p, ul {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.trending ul {
-    list-style: none;
-    padding: 0;
-}
-
-.trending li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.trending li:last-child {
-    border-bottom: none;
-}
-
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr; /* Stack sidebar on top on smaller screens */
+        grid-template-columns: 1fr; /* Stack sidebar on top */
     }
     
     .sidebar {
