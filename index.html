@@ -4,97 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            grid-template-rows: auto 1fr;
-            height: 100vh;
-        }
-        .sidebar {
-            background: #007BFF;
-            color: white;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .sidebar h2 {
-            margin: 0;
-        }
-        .sidebar nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar nav ul li a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 0;
-        }
-        .header {
-            background: #f8f9fa;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            grid-column: span 2;
-        }
-        .search {
-            padding: 8px;
-            width: 250px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-            padding: 20px;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .highlight {
-            border-left: 5px solid orange;
-        }
-        .announcements, .trending {
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
+
 <body>
     <div class="container">
+        <!-- Sidebar -->
         <aside class="sidebar">
-            <h2>Dashboard</h2>
+            <div class="sidebar-header">
+                <h2>📊 Dashboard</h2>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#">🏠 Home</a></li>
@@ -112,8 +32,11 @@
             </nav>
         </aside>
         
+        <!-- Header -->
         <header class="header">
-            <input type="text" class="search" placeholder="Search...">
+            <div class="search-container">
+                <input type="text" class="search" placeholder="Search...">
+            </div>
             <div class="user-info">
                 <span>🔔</span>
                 <img src="user-avatar.png" alt="User Avatar" class="avatar">
@@ -121,34 +44,69 @@
             </div>
         </header>
         
+        <!-- Main Content -->
         <main class="main-content">
+            <!-- Projects Section -->
             <section class="projects">
                 <h2>Your Projects</h2>
                 <div class="project-grid">
-                    <div class="card highlight">Super Cool Project</div>
-                    <div class="card">Less Cool Project</div>
-                    <div class="card">Impossible App</div>
-                    <div class="card">Easy Peasy App</div>
-                    <div class="card">Ad Blocker</div>
-                    <div class="card">Money Maker</div>
+                    <div class="card highlight">
+                        <h3>Super Cool Project</h3>
+                        <p>Short project description here...</p>
+                    </div>
+                    <div class="card">
+                        <h3>Less Cool Project</h3>
+                        <p>Short project description here...</p>
+                    </div>
+                    <div class="card">
+                        <h3>Impossible App</h3>
+                        <p>Short project description here...</p>
+                    </div>
+                    <div class="card">
+                        <h3>Easy Peasy App</h3>
+                        <p>Short project description here...</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ad Blocker</h3>
+                        <p>Short project description here...</p>
+                    </div>
+                    <div class="card">
+                        <h3>Money Maker</h3>
+                        <p>Short project description here...</p>
+                    </div>
                 </div>
             </section>
 
+            <!-- Announcements Section -->
             <section class="announcements">
                 <h2>Announcements</h2>
-                <p>Site Maintenance, Community Share Day, Updated Privacy Policy</p>
+                <div class="announcement-item">
+                    <h3>📢 Site Maintenance</h3>
+                    <p>Details about site maintenance here...</p>
+                </div>
+                <div class="announcement-item">
+                    <h3>📅 Community Share Day</h3>
+                    <p>Details about community event...</p>
+                </div>
+                <div class="announcement-item">
+                    <h3>🔒 Updated Privacy Policy</h3>
+                    <p>Details about privacy changes...</p>
+                </div>
             </section>
 
+            <!-- Trending Section -->
             <section class="trending">
                 <h2>Trending</h2>
                 <ul>
-                    <li>@tegan - World Peace Builder</li>
-                    <li>@morgan - Super Cool Project</li>
-                    <li>@kendall - Life Changing App</li>
-                    <li>@alex - No Traffic Maker</li>
+                    <li><strong>@tegan</strong> - World Peace Builder</li>
+                    <li><strong>@morgan</strong> - Super Cool Project</li>
+                    <li><strong>@kendall</strong> - Life Changing App</li>
+                    <li><strong>@alex</strong> - No Traffic Maker</li>
                 </ul>
             </section>
         </main>
     </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
