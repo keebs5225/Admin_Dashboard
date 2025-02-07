@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
-        <!-- Sidebar / Dashboard -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h2>📊 Dashboard</h2>
+        <!-- Dashboard -->
+        <aside class="dashboard">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
             </div>
             <nav>
                 <ul>
@@ -108,8 +107,8 @@ body, h1, h2, h3, p, ul {
     height: 100vh;
 }
 
-/* Sidebar (Dashboard) */
-.sidebar {
+/* Dashboard */
+.dashboard {
     background-color: #2955cd;
     color: rgb(255, 255, 255);
     padding: 15px;
@@ -122,17 +121,17 @@ body, h1, h2, h3, p, ul {
     transition: width 0.3s ease;
 }
 
-.sidebar h2 {
+.dashboard h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.sidebar ul {
+.dashboard ul {
     list-style: none;
     padding: 0;
 }
 
-.sidebar a {
+.dashboard a {
     text-decoration: none;
     color: white;
     display: flex;
@@ -143,7 +142,7 @@ body, h1, h2, h3, p, ul {
     transition: background 0.3s;
 }
 
-.sidebar a:hover {
+.dashboard a:hover {
     background-color: #2563EB;
 }
 
@@ -222,19 +221,19 @@ body, h1, h2, h3, p, ul {
         grid-template-columns: 60px 1fr;
     }
 
-    /* Sidebar Collapses to Icons Only */
-    .sidebar {
+    /* Dashboard to Icons only */
+    .dashboard {
         width: 60px;
         overflow: hidden;
         padding: 10px;
     }
     
-    .sidebar h2,
-    .sidebar a span {
+    .dashboard h2,
+    .dashboard a span {
         display: none;
     }
 
-    .sidebar a {
+    .dashboard a {
         justify-content: center;
     }
 
