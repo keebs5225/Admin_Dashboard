@@ -13,9 +13,16 @@ The Admin Dashboard project for "The Odin Project" in Intermediate HTML and CSS.
 
 The project is deployed using **GitHub Pages**. You can view it live here:  
 
-➡️ **[Admin Dashboard Live](https://your-username.github.io/admin-dashboard/)**  
+➡️ **[Admin Dashboard Live](https://keebs5225.github.io/Admin-Dashboard/)**  
 
-*(Replace `your-username` with your actual GitHub username.)*
+---
+
+## 🛠 Technologies Used  
+
+- **HTML5** – Structure of the dashboard  
+- **CSS3 (Flexbox & Grid)** – Responsive styling  
+- **Font Awesome** – Icons for the navigation bar  
+- **Google Fonts (Roboto)** – Modern typography  
 
 ---
 
